@@ -5,6 +5,7 @@ import numpy as np
 import fitz
 import re
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import streamlit as st
 
 def extract_text_from_pdf(path):
     text=""
