@@ -26,10 +26,8 @@ def retrieve_similar_chunks(query, k=5):
     return [chunks[i] for i in indices[0]]
 
 path=r'data/fpc_manual.pdf'
-print('i am again')
 pdf_text=extract_text_from_pdf(path)
 cleaned_text=clean_text(pdf_text)
-print(cleaned_text)
 text_splitter=RecursiveCharacterTextSplitter(
     chunk_size=1000, chunk_overlap=100
 )
