@@ -40,7 +40,7 @@ dimension=len(chunk_embeddings[0])
 index=faiss.IndexFlatL2(dimension)
 index.add(np.array(chunk_embeddings))
 
-model_name = "tiiuae/falcon-7b-instruct"
+model_name = "tiiuae/falcon-7b"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto", torch_dtype="auto")
 tokenizer.pad_token_id = tokenizer.eos_token_id
