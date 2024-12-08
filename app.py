@@ -25,7 +25,7 @@ def retrieve_similar_chunks(query, k=5):
     distances, indices = index.search(np.array(query_embedding), k)
     return [chunks[i] for i in indices[0]]
 
-path=r'fpc-manual.pdf'
+path=r'https://github.com/160103126/food_recipes_falcon7B/blob/main/fpc_manual.pdf'
 pdf_text=extract_text_from_pdf(path)
 cleaned_text=clean_text(pdf_text)
 text_splitter=RecursiveCharacterTextSplitter(
