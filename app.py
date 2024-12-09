@@ -51,7 +51,7 @@ def generate_answer(query):
     context = " ".join(retrieved_chunks)
     prompt = f"question: {query} context: {context}"
     
-    inputs = tokenizer(prompt, return_tensors="pt",padding=True, truncation=True)#.to("cuda")
+    inputs = tokenizer(prompt, return_tensors="pt",padding=True, truncation=True).to("cuda")
     outputs = model.generate(inputs["input_ids"], attention_mask=inputs["attention_mask"], max_new_tokens=200,temperature=0.7,do_sample=True)
     response = tokenizer.decode(outputs[0], skip_special_tokens=True)
     return response
